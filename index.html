@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<h1>Messagerie :</h1>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="container container-fluid">
+            <div class="panel panel-default" style="padding: 10px">
+
+
+                        <label for="from_input">From :</label>
+                        <input type="text" style="width: 300px" class="form-control" name="from" id="from_input"/>
+
+                        <label for="to_input">To :</label>
+                        <input type="text" style="width: 300px" class="form-control" name="to" id="to_input"/></td>
+
+                        <label for="to_input">Message :</label>
+                        <textarea class="form-control" name="message" id="message_area"></textarea>
+                        <input type="radio" name="type" id="danger" value="Danger"/> Danger
+                        <input type="radio" name="type" id="normal" value="Normal" checked/> Normal <br>
+
+                    <button type="submit" id="bn" class="btn btn-success" style="float: right">Send</button>
+
+            </div>
+
+        </div>
+        <div id="error" class="alert alert-info"></div>
+        <div class="col-lg-12"  id="messages">
+            <table class="table">
+                <thead>
+                    <th><input onclick='checkall(this)' type="checkbox" id="checkall"> <button id="bnRA" onclick='removeAll()' style="display: none" class="btn btn-danger glyphicon glyphicon-remove btn-sm"></button></th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Message</th>
+                    <th>Action</th>
+                </thead>
+                <tbody id="table">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/firebase/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+<script src="FirebaseInit.js"></script>
+<script src="Message.class.js"></script>
+<script src="Fonctions.js"></script>
+<script>
+    DataBaseListnner()
+</script>
+</body>
+</html>
